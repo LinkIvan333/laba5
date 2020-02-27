@@ -38,10 +38,8 @@ stack2<T>::stack2(stack2&& stack){
 
 template <typename T>
 stack2<T>& stack2<T>::operator=(stack2<T>&& stack) {
-    if (std::move(stack) != this) {
         std::swap(size, stack.size);
         std::swap(this->arr, stack.arr);
-    }
 
     return *this;
 }
