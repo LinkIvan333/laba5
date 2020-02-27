@@ -18,7 +18,7 @@ int main(){
     for (int i = 0; i < 10; i++){
         z.push(i);
     }
-    e=std::move(z);
+    e = std::move(z);
     for (int i = 0; i < 10; i++){
         std::cout << e.head() << "\t";
         e.pop();
