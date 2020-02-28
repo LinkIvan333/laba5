@@ -91,7 +91,7 @@ void stack2<T>::push(const T& value) {
 
 template <typename T>
 void stack2<T>::push(T&& value) {
-    size++;
+    (*size)++;
     std::unique_ptr<T> new_arr(new T[*size]);
     for (unsigned int i = 0; i < (*size-1); ++i){
         new_arr.get()[i] = arr.get()[i];

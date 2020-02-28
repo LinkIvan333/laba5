@@ -14,7 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b5bafcfa-a2db-4f66-80c8-734e12a35764" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/source.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/source.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/stack2.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/stack2.hpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +41,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.advertisement.text.has.clang-format" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/CLionProjects/untitled3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -60,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="CMake Application.source">
+  <component name="RunManager" selected="CMake Application.tests">
     <configuration name="source" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stack" TARGET_NAME="source" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stack" RUN_TARGET_NAME="source">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -101,7 +101,9 @@
       <workItem from="1582109233937" duration="1348000" />
       <workItem from="1582551648608" duration="665000" />
       <workItem from="1582828088281" duration="896000" />
-      <workItem from="1582829581519" duration="501000" />
+      <workItem from="1582829581519" duration="1100000" />
+      <workItem from="1582834329681" duration="49000" />
+      <workItem from="1582920662165" duration="369000" />
     </task>
     <servers />
   </component>
