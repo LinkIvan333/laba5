@@ -79,7 +79,6 @@ TEST(stack, pop)
 
     auto pair = std::make_pair(3, 4.02);
     EXPECT_EQ(stack.head(), pair);
-
 }
 
 TEST(stack, push)

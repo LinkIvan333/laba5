@@ -1,7 +1,7 @@
 //Copyright 2020 <LinkIvan333>
 
-#ifndef INCLUDE_STACK1_HPP_
-#define INCLUDE_STACK1_HPP_
+#ifndef INCLUDE_SIMPLE_STACK_HPP_
+#define INCLUDE_SIMPLE_STACK_HPP_
 #include <memory>
 #include <iostream>
 #include <utility>
@@ -31,7 +31,7 @@ public:
 
 template<typename T>
 simple_stack<T>::simple_stack() {
-    abc=nullptr;
+    abc = nullptr;
 }
 
 template <typename T>
@@ -63,10 +63,11 @@ void simple_stack<T>::pop() {
 
 template <typename T>
 const T& simple_stack<T>::head() const{
-    if (!abc)
+    if (!abc) {
         throw std::logic_error("no stack");
-    else
+    } else {
         return abc->value;
+    }
 }
 
 template <typename T>
@@ -81,4 +82,4 @@ void simple_stack<T>::push(T&& value) {
     abc = new test1<T>{std::forward<T>(value), item};
 }
 
-#endif // INCLUDE_STACK1_HPP_
+#endif // INCLUDE_SIMPLE_STACK_HPP_

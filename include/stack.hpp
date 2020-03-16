@@ -1,7 +1,7 @@
 //Copyright 2020 <LinkIvan333>
 
-#ifndef INCLUDE_STACK2_HPP_
-#define INCLUDE_STACK2_HPP_
+#ifndef INCLUDE_STACK_HPP_
+#define INCLUDE_STACK_HPP_
 #include <memory>
 #include <iostream>
 #include <utility>
@@ -31,7 +31,7 @@ public:
 
 template<typename T>
 stack<T>::stack() {
-    abc=nullptr;
+    abc = nullptr;
 }
 
 template <typename T>
@@ -68,10 +68,11 @@ void stack<T>::pop() {
 
 template <typename T>
 const T& stack<T>::head() const{
-    if (!abc)
+    if (!abc) {
         throw std::logic_error("no stack");
-    else
+    } else {
         return abc->value;
+    }
 }
 
 template <typename T>
@@ -87,4 +88,4 @@ void stack<T>::push(T&& value) {
 }
 
 
-#endif // INCLUDE_STACK2_HPP_
+#endif // INCLUDE_STACK_HPP_
