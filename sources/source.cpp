@@ -7,7 +7,7 @@
 int main(){
     const int a = 7;
     const double b = 15;
-    const std::string c="ds";
+    const std::string c = "ds";
         simple_stack <std::any> stack;
         stack.push(a);
         stack.push(b);
