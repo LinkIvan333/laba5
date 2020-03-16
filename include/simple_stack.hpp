@@ -54,9 +54,9 @@ simple_stack<T>::~simple_stack(){
 
 template <typename T>
 void simple_stack<T>::pop() {
-    if (!abc)
+    if (!abc) {
         throw std::logic_error("no stack");
-    else {
+    } else {
         abc = abc->prev;
     }
 }
