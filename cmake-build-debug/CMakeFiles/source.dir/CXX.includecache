@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/stack1.hpp
+../include/simple_stack.hpp
 memory
 -
 iostream
@@ -14,7 +14,7 @@ iostream
 utility
 -
 
-../include/stack2.hpp
+../include/stack.hpp
 memory
 -
 iostream
@@ -22,9 +22,9 @@ iostream
 utility
 -
 
-/cygdrive/c/Git/lab-05-stack/sources/source.cpp
-stack1.hpp
+/cygdrive/d/Projects/laba5/sources/source.cpp
+simple_stack.hpp
 -
-stack2.hpp
+stack.hpp
 -
 

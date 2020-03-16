@@ -1,47 +1,126 @@
-//Copyright 2019 <LinkIvan333>
+//Copyright 2020 <LinkIvan333>
 
 #include <gtest/gtest.h>
 #include <iostream>
-#include <stack2.hpp>
-#include <stack1.hpp>
-
+#include <stack.hpp>
+#include <simple_stack.hpp>
+const int a = 7;
+const int b = 15;
 
 TEST(Example, EmptyTest) {
-    stack1<int> a;
-    stack1<std::string> c;
-    c.push("тевирп");
-    EXPECT_EQ("тевирп", c.head());
-    a.push(1);
-    a.push(2);
-    a.push(3);
-    a.push(4);
-    EXPECT_EQ(4, a.head());
-    a.pop();
-    EXPECT_EQ(3, a.head());
-    stack2<int> b;
-    b.push_emplace(1, 2);
-    b.push_emplace(3, 4);
-    EXPECT_EQ(4, b.head());
-    b.pop();
-    EXPECT_EQ(3, b.head());
-    b.push(4);
-    EXPECT_EQ(4, b.head());
+    simple_stack <int> stack;
+
+    stack.push(a);
+    stack.push(b);
+
+    EXPECT_EQ(stack.head(), b);
 }
 
-TEST(stack12, testcopy)
+TEST(simple_stack, pop)
 {
-    EXPECT_EQ(std::is_copy_constructible_v<stack1<int>>, false);
-    EXPECT_EQ(std::is_copy_constructible_v<stack2<int>>, false);
+    simple_stack <int> stack;
 
-    EXPECT_EQ(std::is_copy_assignable_v<stack1<int>>, false);
-    EXPECT_EQ(std::is_copy_assignable_v<stack2<int>>, false);
+    stack.push(a);
+    stack.push(b);
+
+    stack.pop();
+
+    EXPECT_EQ(stack.head(), a);
 }
 
-TEST(stack12, testmove)
+TEST(simple_stack, test_error_empty_stack_pop)
 {
-    EXPECT_EQ(std::is_move_constructible_v<stack1<int>>, true);
-    EXPECT_EQ(std::is_move_constructible_v<stack2<int>>, true);
+    simple_stack <int> stack;
 
-    EXPECT_EQ(std::is_move_assignable_v<stack1<int>>, true);
-    EXPECT_EQ(std::is_move_assignable_v<stack2<int>>, true);
+    EXPECT_THROW(stack.pop(), std::logic_error);
+}
+
+TEST(simple_stack, test_error_empty_stack_head)
+{
+    simple_stack <double> stack;
+
+    EXPECT_THROW(stack.head(), std::logic_error);
+}
+
+TEST(simple_stack, second_push)
+{
+    simple_stack <int> stack;
+
+    stack.push(std::move(a));
+    stack.push(std::move(b));
+
+    EXPECT_EQ(stack.head(), b);
+
+    stack.pop();
+
+    EXPECT_EQ(stack.head(), a);
+}
+
+
+
+TEST(stack, push_emplace)
+{
+    stack < std::pair <int, double>> stack{};
+
+    stack.push_emplace(15, 30.5);
+    stack.push_emplace(7, 9.2);
+
+    auto pair = std::make_pair(7, 9.2);
+    EXPECT_EQ(stack.head(), pair);
+}
+
+
+TEST(stack, pop)
+{
+    stack < std::pair <int, double>> stack{};
+
+    stack.push_emplace(67, 8.69);
+    stack.push_emplace(3, 4.02);
+
+    auto pair = std::make_pair(3, 4.02);
+    EXPECT_EQ(stack.head(), pair);
+
+}
+
+TEST(stack, push)
+{
+    stack <double> stack;
+
+    stack.push(2.1);
+    stack.push(6.6);
+
+    EXPECT_EQ(stack.head(), 6.6);
+}
+
+TEST(stack, except)
+{
+    stack <int> stack;
+
+    EXPECT_THROW(stack.pop(), std::logic_error);
+}
+
+TEST(stack, excepthead)
+{
+    stack <int> stack;
+
+    EXPECT_THROW(stack.head(), std::logic_error);
+}
+
+
+TEST(stak12, testcopy)
+{
+    EXPECT_EQ(std::is_copy_constructible_v<simple_stack<int>>, false);
+    EXPECT_EQ(std::is_copy_constructible_v<stack<int>>, false);
+
+    EXPECT_EQ(std::is_copy_assignable_v<simple_stack<int>>, false);
+    EXPECT_EQ(std::is_copy_assignable_v<stack<int>>, false);
+}
+
+TEST(stak12, testmove)
+{
+    EXPECT_EQ(std::is_move_constructible_v<simple_stack<int>>, true);
+    EXPECT_EQ(std::is_move_constructible_v<stack<int>>, true);
+
+    EXPECT_EQ(std::is_move_assignable_v<simple_stack<int>>, true);
+    EXPECT_EQ(std::is_move_assignable_v<stack<int>>, true);
 }

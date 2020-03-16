@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/stack1.hpp
+../include/simple_stack.hpp
 memory
 -
 iostream
@@ -14,7 +14,7 @@ iostream
 utility
 -
 
-../include/stack2.hpp
+../include/stack.hpp
 memory
 -
 iostream
@@ -22,14 +22,14 @@ iostream
 utility
 -
 
-/cygdrive/c/Git/lab-05-stack/tests/test.cpp
+/cygdrive/d/Projects/laba5/tests/test.cpp
 gtest/gtest.h
 -
 iostream
 -
-stack2.hpp
+stack.hpp
 -
-stack1.hpp
+simple_stack.hpp
 -
 
 /home/zamot/.hunter/_Base/9a3594a/0a1854b/c351cc1/Install/include/gtest/gtest-death-test.h
