@@ -61,7 +61,7 @@ void stack<T>::push_emplace(Args&&... value){
 template <typename T>
 void stack<T>::pop() {
     if (!abc){
-        throw std::logic_error("no stack");
+        throw std::logic_error("No elements in stack\"");
     } else {
         abc = abc->prev;
     }
@@ -70,7 +70,7 @@ void stack<T>::pop() {
 template <typename T>
 const T& stack<T>::head() const{
     if (!abc) {
-        throw std::logic_error("no stack");
+        throw std::logic_error("No elements in stack\"");
     } else {
         return abc->value;
     }

@@ -4,11 +4,13 @@
 #include <iostream>
 #include <stack.hpp>
 #include <simple_stack.hpp>
+#include <any>
+
 const int a = 7;
 const int b = 15;
 
 TEST(Example, EmptyTest) {
-    simple_stack <int> stack;
+    simple_stack <std::any> stack;
 
     stack.push(a);
     stack.push(b);

@@ -19,8 +19,6 @@ private:
 public:
     simple_stack();
     ~simple_stack();
-    template <typename ... Args>
-    void push_emplace(Args&&... value);
     void push(T&& value);
     void push(const T& value);
     const T& head() const;
