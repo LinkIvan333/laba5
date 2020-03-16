@@ -28,20 +28,6 @@ TEST(simple_stack, pop)
     EXPECT_EQ(stack.head(), a);
 }
 
-TEST(simple_stack, test_error_empty_stack_pop)
-{
-    simple_stack <int> stack;
-
-    EXPECT_THROW(stack.pop(), std::logic_error);
-}
-
-TEST(simple_stack, test_error_empty_stack_head)
-{
-    simple_stack <double> stack;
-
-    EXPECT_THROW(stack.head(), std::logic_error);
-}
-
 TEST(simple_stack, second_push)
 {
     simple_stack <int> stack;
@@ -59,6 +45,17 @@ TEST(simple_stack, second_push)
 
 
 TEST(stack, push_emplace)
+{
+    stack < std::pair <int, double>> stack{};
+
+    stack.push_emplace(15, 30.5);
+    stack.push_emplace(7, 9.2);
+
+    auto pair = std::make_pair(7, 9.2);
+    EXPECT_EQ(stack.head(), pair);
+}
+
+TEST(stack, push_emplace2)
 {
     stack < std::pair <int, double>> stack{};
 
@@ -90,21 +87,6 @@ TEST(stack, push)
 
     EXPECT_EQ(stack.head(), 6.6);
 }
-
-TEST(stack, except)
-{
-    stack <int> stack;
-
-    EXPECT_THROW(stack.pop(), std::logic_error);
-}
-
-TEST(stack, excepthead)
-{
-    stack <int> stack;
-
-    EXPECT_THROW(stack.head(), std::logic_error);
-}
-
 
 TEST(stak12, testcopy)
 {

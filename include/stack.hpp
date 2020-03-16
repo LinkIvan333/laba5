@@ -5,6 +5,7 @@
 #include <memory>
 #include <iostream>
 #include <utility>
+#include <stack>
 template <typename T>
 struct test2{
     T value;

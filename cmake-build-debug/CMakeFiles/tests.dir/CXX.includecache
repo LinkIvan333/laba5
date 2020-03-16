@@ -21,6 +21,8 @@ iostream
 -
 utility
 -
+stack
+-
 
 /cygdrive/d/Projects/laba5/tests/test.cpp
 gtest/gtest.h
