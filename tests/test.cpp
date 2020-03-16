@@ -10,7 +10,7 @@ const int a = 7;
 const int b = 15;
 
 TEST(Example, EmptyTest) {
-    simple_stack <std::any> stack;
+    simple_stack <int> stack;
 
     stack.push(a);
     stack.push(b);

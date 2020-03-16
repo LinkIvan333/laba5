@@ -9,7 +9,6 @@ template <typename T>
 struct test1{
     T value;
     test1<T> *prev;
-    test1(T value1, test1<T> *prev1) : value(value1), prev(prev1) {}
 };
 template <typename T>
 class simple_stack
