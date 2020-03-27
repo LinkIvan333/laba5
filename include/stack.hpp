@@ -10,7 +10,6 @@ template <typename T>
 struct test2{
     T value;
     test2<T> *prev;
-    test2(T value1, test2<T> *prev1) : value(value1), prev(prev1) {}
 };
 template <typename T>
 class stack
@@ -54,8 +53,14 @@ stack<T>::~stack(){
 template<typename T>
 template <typename ... Args>
 void stack<T>::push_emplace(Args&&... value){
-    auto item = abc;
-    abc = new test2<T>{{std::forward<Args>(value)...}, item};
+    T args[]={value...};
+    for(auto e:args){
+       push(e);
+    }
+   /* auto item = abc;
+    abc = new test2<T>;
+    abc->value = T(std::forward<Args>(value)...);
+    abc->prev=item;*/
 }
 
 template <typename T>
@@ -79,7 +84,7 @@ const T& stack<T>::head() const{
 template <typename T>
 void stack<T>::push(const T& value) {
     auto item = abc;
-    abc = new test2<T>{std::forward<T>(value), item};
+    abc = new test2<T>{value, item};
 }
 
 template <typename T>

@@ -5,14 +5,10 @@
 #include <any>
 
 int main(){
-    const int a = 7;
-    const double b = 15;
-    const std::string c = "ds";
-        simple_stack <std::any> stack;
-        stack.push(a);
-        stack.push(b);
-        stack.push(c);
-        std::cout << std::any_cast<std::string>(stack.head());
-
+        stack <std::any> stack;
+        stack.push(1);
+        stack.push(20);
+        stack.push_emplace<std::any>(2, 3, 5, 8, "abc", 4.2);
+        std::cout << std::any_cast<double>(stack.head());
     return 0;
 }

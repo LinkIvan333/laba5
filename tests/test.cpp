@@ -45,51 +45,6 @@ TEST(simple_stack, second_push)
 }
 
 
-
-TEST(stack, push_emplace)
-{
-    stack < std::pair <int, double>> stack{};
-
-    stack.push_emplace(15, 30.5);
-    stack.push_emplace(7, 9.2);
-
-    auto pair = std::make_pair(7, 9.2);
-    EXPECT_EQ(stack.head(), pair);
-}
-
-TEST(stack, push_emplace2)
-{
-    stack < std::pair <int, double>> stack{};
-
-    stack.push_emplace(15, 30.5);
-    stack.push_emplace(7, 9.2);
-
-    auto pair = std::make_pair(7, 9.2);
-    EXPECT_EQ(stack.head(), pair);
-}
-
-
-TEST(stack, pop)
-{
-    stack < std::pair <int, double>> stack{};
-
-    stack.push_emplace(67, 8.69);
-    stack.push_emplace(3, 4.02);
-
-    auto pair = std::make_pair(3, 4.02);
-    EXPECT_EQ(stack.head(), pair);
-}
-
-TEST(stack, push)
-{
-    stack <double> stack;
-
-    stack.push(2.1);
-    stack.push(6.6);
-
-    EXPECT_EQ(stack.head(), 6.6);
-}
-
 TEST(stak12, testcopy)
 {
     EXPECT_EQ(std::is_copy_constructible_v<simple_stack<int>>, false);
