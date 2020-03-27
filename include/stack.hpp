@@ -57,7 +57,6 @@ void stack<T>::push_emplace(Args&&... value){
     for (auto e : args){
        push(e);
     }
-
 }
 
 template <typename T>
