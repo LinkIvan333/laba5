@@ -54,13 +54,10 @@ template<typename T>
 template <typename ... Args>
 void stack<T>::push_emplace(Args&&... value){
     T args[]={value...};
-    for(auto e:args){
+    for (auto e : args){
        push(e);
     }
-   /* auto item = abc;
-    abc = new test2<T>;
-    abc->value = T(std::forward<Args>(value)...);
-    abc->prev=item;*/
+
 }
 
 template <typename T>
