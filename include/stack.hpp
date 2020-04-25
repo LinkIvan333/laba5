@@ -86,7 +86,7 @@ void stack<T>::push(const T& value) {
 template <typename T>
 void stack<T>::push(T&& value) {
     auto item = abc;
-    abc = new test2<T>{std::forward<T>(value), item};
+    abc = new test2<T>{std::move(value), item};
 }
 
 

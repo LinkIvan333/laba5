@@ -8,7 +8,7 @@ int main(){
         stack <std::any> stack;
         stack.push(1);
         stack.push(20);
-        stack.push_emplace<std::any>(2, 3, 5, 8, "abc", 4.2);
-        std::cout << std::any_cast<double>(stack.head());
+        stack.push_emplace<std::any>(2, 3, 8, "abc", 4.2, 'a');
+        std::cout << std::any_cast<char>(stack.head());
     return 0;
 }
